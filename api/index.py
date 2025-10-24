@@ -19,7 +19,7 @@ SEED_TOPICS = [
     "graphic design", "poster design", "motion graphics",
     "visual design", "midjourney", "stability ai",
     "text to image", "text to video","multiple images to image", "multiple images to video", "canva ai", "adobe firefly",
-    "dall-e", "ai image generator",
+    "dall-e", "veo", "gemini", "chatGpt", "ai image generator",
     "stable diffusion", "ai video generator", "prompt design",
     "promotional video", "social media graphics", "branding design",
     "3d modeling", "character design", "environment design",
