@@ -25,8 +25,13 @@ The API automatically fetches trending data from Google Trends, stores it in Sup
 - 🎨 **AI Art Focused**: Tracks trends in AI art, digital design, and visual creation tools
 - 📊 **Google Trends Integration**: Uses PyTrends library with fallback to unofficial Google Trends API
 - 💾 **Supabase Storage**: Automatically stores trending keywords in Supabase database
-- ⚡ **Caching**: 1-hour cache to optimize API calls
+- ⚡ **Multi-Level Caching**: Advanced caching system to prevent overfetching
+  - Memory cache (1 hour) for instant responses
+  - Database cache (2 hours) for recent data
+  - Rate limiting (10s intervals, 100 req/hour)
+  - Automatic cache cleanup and monitoring
 - 🚀 **Vercel Ready**: Configured for easy deployment on Vercel
+- 🛡️ **Rate Limiting**: Built-in protection against API abuse and overfetching
 
 ## Tech Stack
 
@@ -79,19 +84,79 @@ Returns trending keywords for a randomly selected visual AI art topic.
 **Response Example:**
 ```json
 {
-  "source": "google_trends",
+  "source": "pytrends",
   "topic": "AI art",
+  "cache_hit": "fresh",
+  "timestamp": "2024-10-24T10:30:00.000000",
   "trend_keywords": [
     {
       "keyword": "ai art generator",
       "score": 85,
       "topic": "AI art",
-      "source": "google_trends",
+      "source": "pytrends",
       "timestamp": "2024-10-24T10:30:00.000000"
     }
   ]
 }
 ```
+
+**Cache Sources:**
+- `fresh`: Newly fetched from Google Trends
+- `memory`: Served from 1-hour memory cache
+- `database_cache`: Retrieved from 2-hour database cache
+
+### GET /cache-status
+
+Returns current cache statistics and rate limiting status for monitoring.
+
+**Response Example:**
+```json
+{
+  "cache_stats": {
+    "total_entries": 5,
+    "fresh_entries": 3,
+    "expired_entries": 2,
+    "cache_duration_hours": 1
+  },
+  "rate_limiting": {
+    "requests_this_hour": 15,
+    "max_requests_per_hour": 100,
+    "min_request_interval_seconds": 10,
+    "last_request_time": "2024-10-24T10:25:00.000000"
+  },
+  "system_info": {
+    "uptime_hours": 2.5,
+    "last_cleanup": "2024-10-24T08:00:00.000000",
+    "cached_topics": ["AI art", "digital art", "midjourney"]
+  }
+}
+```
+
+## Caching Strategy
+
+MGTrends implements a sophisticated multi-level caching system to prevent overfetching and API abuse:
+
+### 1. Memory Cache (1 hour)
+- Fastest response time
+- Stores API responses in memory
+- Automatic cleanup of expired entries
+
+### 2. Database Cache (2 hours) 
+- Queries recent data from Supabase
+- Fallback when memory cache misses
+- Avoids external API calls for recent topics
+
+### 3. Rate Limiting
+- Minimum 10 seconds between external API calls
+- Maximum 100 requests per hour
+- Automatic blocking with error responses
+
+### 4. Cache Monitoring
+- `/cache-status` endpoint for monitoring
+- Real-time statistics and system health
+- Cache hit ratios and performance metrics
+
+This ensures reliable service while respecting Google Trends API limits.
 
 ## Tracked Topics
 
