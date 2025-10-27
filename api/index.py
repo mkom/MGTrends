@@ -55,7 +55,7 @@ EXTENDED_DB_FIELDS = ["topic_cluster", "intent", "keyword_hash"]
 SEED_TOPICS = {
     "poster_design": [
         "AI Poster Design", "retro vintage poster prompt", "propaganda poster ai",
-        "soviet style poster prompt", "china propaganda style poster",
+        "soviet style poster prompt", "propaganda style poster",
         "vintage red cream poster", "socialist propaganda artwork",
         "revolution poster design ai", "vintage bold typography poster",
         "minimalist poster prompt"
@@ -74,7 +74,7 @@ SEED_TOPICS = {
         "remove background ai", "neon cyberpunk prompt", "cinematic ai prompt"
     ],
     "social_media_ads": [
-        "tiktok video ai", "tiktok ads creative", "shopee affiliate tiktok",
+        "video ai", " ads creative", " affiliate ", "ugc video ai",
         "video affiliate prompt", "viral video prompt ai"
     ]
 }
