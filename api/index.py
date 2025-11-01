@@ -53,30 +53,74 @@ EXTENDED_DB_FIELDS = ["topic_cluster", "intent", "keyword_hash"]
 # SEED TOPICS (clustered)
 # -------------------------
 SEED_TOPICS = {
-    "poster_design": [
-        "AI Poster Design", "retro vintage poster prompt", "propaganda poster ai",
-        "soviet style poster prompt", "propaganda style poster",
-        "vintage red cream poster", "socialist propaganda artwork",
-        "revolution poster design ai", "vintage bold typography poster",
-        "minimalist poster prompt"
+    "character_prompts": [
+        "3D Character Creator", "Anime Character Prompt", "3d animation prompt ai",
+        "surreal art prompt ai", "kawaii cute design prompt", "Hyper Realistic",
+        "fantasy character prompt", "sci fi character design", "steampunk character prompt",
+        "villain character concept", "hero character backstory", "mythical creature prompt",
+        "hyper realistic character", "photorealistic character design", "ultra realistic portrait",
+        "realistic human character", "lifelike character rendering", "detailed realistic faces"
     ],
+    
     "branding_prompts": [
         "AI Logo / Mascot Prompt", "Product Mockup Generation", "Social Media Template Prompt",
         "Styling Influencer Photos", "Interior / Room Design AI Prompt"
     ],
-    "character_prompts": [
-        "3D Character Creator", "Anime Character Prompt", "3d animation prompt ai",
-        "surreal art prompt ai", "kawaii cute design prompt"
-    ],
-    "ai_media_tools": [
-        "ai image prompt", "ai photo prompt", "text to image", "ai video prompt",
-        "text to video ai", "image editing ai", "video editing ai", "enhance photo ai",
-        "remove background ai", "neon cyberpunk prompt", "cinematic ai prompt"
-    ],
+
+    # "ai_media_tools": [
+    #     "ai image prompt", "ai photo prompt", "text to image", "ai video prompt",
+    #     "text to video ai", "image editing ai", "video editing ai", "enhance photo ai",
+    #     "remove background ai", "neon cyberpunk prompt", "cinematic ai prompt"
+    # ],
+
     "social_media_ads": [
         "video ai", " ads creative", " affiliate ", "ugc video ai",
         "video affiliate prompt", "viral video prompt ai"
-    ]
+    ],
+    "poster_design": [
+        "movie poster design", "music poster design", "concert poster template",
+        "vintage movie poster", "retro concert poster", "film poster inspiration",
+        "event poster design", "band poster aesthetic", "typography poster design",
+        "graphic poster layout", "poster illustration style", "advertising poster template",
+        "minimalist poster design", "bold poster typography", "creative poster ideas",
+        "poster design trends", "visual poster concepts", "artistic poster layouts"
+    ],
+
+    # "3d_design_art": [
+    #     "3D modeling software", "3D animation techniques", "3D rendering process",
+    #     "3D printing technology", "Blender 3D tutorial", "Maya 3D design",
+    #     "Cinema 4D basics", "volumetric design", "perspective drawing",
+    #     "depth mapping 3D", "3D character modeling", "3D scene creation",
+    #     "3D product design", "entertainment 3D art", "industrial 3D modeling",
+    #     "architectural visualization", "3D game assets", "motion graphics 3D"
+    # ],
+
+    "concept_art": [
+        "concept art techniques", "environment concept art", "character concept design",
+        "creature concept art", "storytelling concept art", "visual development art",
+        "film concept art", "game concept art", "mood board concept art",
+        "color scripting", "ideation sketches", "production concept art",
+        "concept art workflow", "digital painting concept", "worldbuilding art",
+        "environment ideation", "character silhouette design", "concept art portfolio"
+    ],
+
+    "portrait_photography": [
+        "portrait photography lighting", "studio portrait setup", "natural light portraits",
+        "portrait posing tips", "headshot photography", "family portrait ideas",
+        "creative portrait concepts", "moody portrait lighting", "portrait retouching techniques",
+        "portrait photography gear", "outdoor portrait locations", "portrait composition rules",
+        "dramatic portrait lighting", "portrait photography workshops", "portrait editing workflow",
+        "softbox portrait lighting", "portrait depth of field", "portrait storytelling"
+    ],
+
+    # "urban_design": [
+    #     "urban design principles", "public space planning", "transit oriented development",
+    #     "mixed use development", "walkable city design", "green infrastructure urban",
+    #     "sustainable urban planning", "urban landscape architecture", "city zoning strategies",
+    #     "urban mobility solutions", "smart city design", "urban regeneration projects",
+    #     "downtown revitalization", "pedestrian friendly streets", "urban public art",
+    #     "community engagement urban design", "urban master planning", "climate resilient cities"
+    # ],
 }
 
 ALL_TOPICS = [t for topics in SEED_TOPICS.values() for t in topics]
